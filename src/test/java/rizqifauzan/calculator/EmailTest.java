@@ -8,59 +8,24 @@ import junit.framework.Assert;
 
 public class EmailTest {
 
-	Calculator cal;
+	public Email email;
 
 	@Test
-	public void test1() {
-		int c = cal.tambah(3, 4);
-		Assert.assertEquals(7, c);
-		System.out.println("Test1");
+	public void test_emailValid() {
+		boolean check = email.checkEmail("rizqi.fauzan@mailnesia.com");
+		Assert.assertEquals(true, check); 
 	}
-
+	
 	@Test
-	public void test2() {
-		System.out.println("Test2");
-
+	public void test_emailInvalid() {
+		boolean check = email.checkEmail("rizqi.fauzan@mailnesia");
+		Assert.assertEquals(false, check); 
 	}
-
-	@Test
-	public void test3() {
-		System.out.println("Test3");
-
-	}
-
-	@Test
-	public void test4() {
-		System.out.println("Test4");
-
-	}
-
+	
 	@Before
-	public void before() {
-		cal = new Calculator();
-		System.out.println("Before Jalan");
-
+	public void persiapan() {
+		email = new Email(); 
+		System.out.println("@Before Jalan");
 	}
-
-	@After
-	public void after() {
-		System.out.println("After Jalan");
-	}
-
-//	
-//	@BeforeClass
-//	public void beforeClass112() {
-//		System.out.println("Before Class Jalan");
-//
-//	}
-//	
-//	public void afterClass112() {
-//		System.out.println("After Class Jalan");
-//	}
-
-	// @before
-	// @after
-	// @beforeClass
-	// @afterClass
 
 }
